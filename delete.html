@@ -4,20 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Together — Suppression des données / Data deletion</title>
-  <meta name="description" content="Demander la suppression de vos données du jeu Together (À deux), Arcail² Studio.">
+  <meta name="description" content="Demander la suppression de vos données du jeu Together, Arcail² Studio.">
   <style>
     :root { --ink: #3F3129; --muted: #7C6C60; --bg: #FBF6EC; --line: #E6DAC8; --accent: #5E7F5E; }
-    body { font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 40px auto; padding: 0 22px; color: var(--ink); background: var(--bg); }
-    h1 { font-size: 30px; line-height: 1.2; }
-    h2 { font-size: 22px; margin-top: 32px; }
+    body { font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 860px; margin: 40px auto; padding: 0 22px; background: var(--bg); color: var(--ink); }
+    h1 { font-size: 32px; line-height: 1.25; margin-bottom: 6px; }
+    h2 { font-size: 23px; margin-top: 34px; }
     a { color: var(--accent); text-underline-offset: 3px; }
     a:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    nav { color: var(--muted); }
+    .date { color: var(--muted); margin-top: 0; }
+    nav, .note { color: var(--muted); }
+    .action { display: inline-block; padding: 12px 18px; border: 1.5px solid var(--accent); border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .button { display: inline-block; background: var(--accent); color: #fff; padding: 14px 20px; border-radius: 12px; text-decoration: none; margin: 24px 0 8px; font-weight: 600; }
     label { display: block; margin-top: 20px; font-weight: 600; }
     input { box-sizing: border-box; width: 100%; padding: 13px; border: 1px solid #A89888; border-radius: 10px; font: inherit; background: #FFFDF8; color: var(--ink); }
-    .action { display: inline-block; background: var(--accent); color: #fff; padding: 14px 20px; border-radius: 12px; text-decoration: none; margin: 24px 0 8px; font-weight: 600; }
-    .note { color: var(--muted); }
-    hr { border: 0; border-top: 1px solid var(--line); margin: 36px 0; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
   </style>
 </head>
 <body>
@@ -26,8 +27,7 @@
   <main>
     <article lang="fr">
       <h1>Together — Demander la suppression de vos données</h1>
-      <p>Arcail² Studio vous permet de demander la suppression de votre compte de jeu (identifiant de joueur Unity) et de sa sauvegarde cloud.</p>
-
+      <p>Arcail² Studio vous permet de demander la suppression de votre compte de jeu (identifiant de joueur Unity), de sa sauvegarde cloud et de vos scores au classement.</p>
       <h2>Comment envoyer une demande</h2>
       <ol>
         <li>Dans Together, ouvrez <strong>Réglages → Confidentialité → Demander la suppression de mes données</strong>. L’identifiant de votre partie est alors prérempli ci-dessous.</li>
@@ -35,27 +35,22 @@
         <li>Le studio pourra vous demander des informations limitées pour vérifier que la partie vous appartient. N’envoyez jamais de mot de passe, de code de connexion ou de coordonnées bancaires.</li>
       </ol>
       <p class="note">Ouvrir cette page ne supprime rien et n’envoie aucune demande automatiquement. Nous répondons dans les délais légaux applicables et confirmons le traitement de la demande.</p>
-
       <h2>Identifiant de votre partie</h2>
       <p class="note">Ce champ reste dans votre navigateur. Il n’est inclus que dans le courriel que vous choisissez d’envoyer. Laissez-le vide si vous ne le connaissez pas.</p>
       <label for="player">Identifiant de joueur / Player ID</label>
       <input id="player" maxlength="128" autocomplete="off" spellcheck="false">
-      <a class="action" id="request" href="mailto:arcail2studio.contact@gmail.com?subject=Together%20-%20Demande%20de%20suppression">Préparer ma demande par courriel</a>
-      <p class="note">Sans application de messagerie, copiez l’identifiant et écrivez directement à l’adresse ci-dessus.</p>
-
+      <a class="button" id="request" href="mailto:arcail2studio.contact@gmail.com">Préparer ma demande par courriel</a>
       <h2>Ce qui est supprimé et ce qui peut être conservé</h2>
-      <p>La demande concerne l’identifiant de joueur Unity Authentication associé à Together et sa sauvegarde Unity Cloud Save (progression, aides, pseudonyme, avatar). Une éventuelle liaison Google Play Games est retirée avec ce compte de jeu.</p>
-      <p>La suppression cloud est irréversible. Pendant le traitement, évitez d’ouvrir le jeu pour qu’il ne recrée pas de sauvegarde. Pour effacer les données enregistrées sur votre appareil, effacez les données de l’application dans les paramètres Android ou désinstallez-la. Une nouvelle utilisation peut créer un nouvel identifiant de joueur.</p>
-      <p>Si la sauvegarde cloud n’était pas activée dans votre version du jeu, votre progression n’existe que sur votre appareil : effacer les données de l’application suffit. La preuve du traitement de votre demande peut être conservée pendant la durée imposée par la réglementation.</p>
-      <p>Pour les données publicitaires traitées par Google, consultez les <a href="https://myaccount.google.com/data-and-privacy">outils de confidentialité Google</a>. Le studio ne peut pas supprimer un compte Google à votre place.</p>
+      <p>La demande concerne l’identifiant de joueur Unity Authentication associé à Together et sa sauvegarde Unity Cloud Save. Une éventuelle liaison Google Play Games est retirée avec ce compte de jeu. La suppression cloud est irréversible ; pendant le traitement, évitez d’ouvrir le jeu pour qu’il ne recrée pas de sauvegarde.</p>
+      <p>Si la sauvegarde cloud n’était pas activée dans votre version du jeu, votre progression n’existe que sur votre appareil.</p>
+      <p>Pour effacer les données enregistrées sur votre appareil, effacez les données de l’application dans les paramètres Android ou désinstallez-la. La preuve du traitement de votre demande peut être conservée pendant la durée imposée par la réglementation. Pour les données publicitaires traitées par Google, consultez les <a href="https://myaccount.google.com/data-and-privacy">outils de confidentialité Google</a>.</p>
     </article>
 
     <hr>
 
     <article lang="en" id="english">
       <h1>Together — Request deletion of your data</h1>
-      <p>Arcail² Studio lets you request deletion of your game account (Unity player identifier) and its cloud save.</p>
-
+      <p>Arcail² Studio lets you request deletion of your game account (Unity player identifier), its cloud save and your ranking scores.</p>
       <h2>How to send a request</h2>
       <ol>
         <li>In Together, open <strong>Settings → Privacy → Request data deletion</strong>. Your game identifier is then filled in above.</li>
@@ -63,30 +58,26 @@
         <li>The studio may ask for limited information to check that the game belongs to you. Never send a password, sign-in code or payment details.</li>
       </ol>
       <p class="note">Opening this page deletes nothing and sends no request automatically. We answer within the applicable legal time limits and confirm when the request has been handled.</p>
-      <a class="action" id="request-en" href="mailto:arcail2studio.contact@gmail.com?subject=Together%20-%20Data%20deletion%20request">Prepare my request by email</a>
-
+      <a class="button" id="request-en" href="mailto:arcail2studio.contact@gmail.com">Prepare my request by email</a>
       <h2>What is deleted and what may be kept</h2>
-      <p>The request covers the Unity Authentication player identifier associated with Together and its Unity Cloud Save data (progression, hints, nickname, avatar). Any Google Play Games link is removed with this game account.</p>
-      <p>Cloud deletion cannot be undone. While it is processed, avoid opening the game so that it does not create a new save. To erase the data stored on your device, clear the app’s data in Android settings or uninstall it. Using the game again may create a new player identifier.</p>
-      <p>If cloud saving was not enabled in your version of the game, your progression only exists on your device: clearing the app’s data is enough. Proof that your request was handled may be kept for the period required by law.</p>
-      <p>For advertising data processed by Google, see <a href="https://myaccount.google.com/data-and-privacy">Google’s privacy tools</a>. The studio cannot delete a Google account for you.</p>
+      <p>The request covers the Unity Authentication player identifier associated with Together and its Unity Cloud Save data. Any Google Play Games link is removed with this game account. Cloud deletion cannot be undone; while it is processed, avoid opening the game so that it does not create a new save.</p>
+      <p>If cloud saving was not enabled in your version of the game, your progression only exists on your device.</p>
+      <p>To erase the data stored on your device, clear the app’s data in Android settings or uninstall it. Proof that your request was handled may be kept for the period required by law. For advertising data processed by Google, see <a href="https://myaccount.google.com/data-and-privacy">Google’s privacy tools</a>.</p>
     </article>
   </main>
-
   <script>
     // Identifiers arrive in the address fragment (#game=…&player=…), which never reaches the server.
     const values = new URLSearchParams(location.hash.slice(1));
     const player = document.getElementById('player');
     player.value = (values.get('player') || '').slice(0, 128);
-    const game = (values.get('game') || 'com.arcailstudio.together').slice(0, 128);
-    // Remove identifiers from the visible address without any network request.
+    const game = (values.get('game') || "com.arcailstudio.together").slice(0, 128);
     if (location.hash.includes('=')) history.replaceState(null, '', location.pathname);
     function updateMail() {
       const ids = '\nPlayer ID: ' + player.value.trim() + '\nGame: ' + game;
-      const fr = 'Bonjour Arcail² Studio,\nJe souhaite demander la suppression de mon compte de jeu Together et de sa sauvegarde cloud.\n' + ids;
-      const en = 'Hello Arcail² Studio,\nI would like to request deletion of my Together game account and its cloud save.\n' + ids;
-      document.getElementById('request').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent('Together - Demande de suppression') + '&body=' + encodeURIComponent(fr);
-      document.getElementById('request-en').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent('Together - Data deletion request') + '&body=' + encodeURIComponent(en);
+      const fr = "Bonjour Arcail² Studio,\nJe souhaite demander la suppression de mes données Together.\n" + ids;
+      const en = "Hello Arcail² Studio,\nI would like to request deletion of my Together data.\n" + ids;
+      document.getElementById('request').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent("Together - Demande de suppression") + '&body=' + encodeURIComponent(fr);
+      document.getElementById('request-en').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent("Together - Data deletion request") + '&body=' + encodeURIComponent(en);
     }
     player.addEventListener('input', updateMail); updateMail();
     if (values.get('lang') === 'en') document.getElementById('english').scrollIntoView();
